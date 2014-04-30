@@ -18,6 +18,6 @@ When the Grub boot menu appears, highlight Install or upgrade an existing system
 
 **NB** You won't have the virtualbox extensions installed, so you can't copy and paste the link above, so make sure you type carefully see screenshot.
 
-![](//github.com/jujhars13/kickstart-profiles/blob/master/centos65-VM-VirtualBox.png?raw=true)
+![](https://raw.githubusercontent.com/jujhars13/kickstart-profiles/master/centos65-VM-VirtualBox.png)
 
 
