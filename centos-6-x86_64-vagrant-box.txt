@@ -3,7 +3,7 @@ text
 
 cdrom
 
-lang en_UK.UTF-8
+lang en_GB.UTF-8
 keyboard uk
 
 network --onboot yes --bootproto dhcp --noipv6
@@ -45,6 +45,8 @@ ntp
 acl
 lynx
 telnet
+libmemcached
+mysql
 %end
 
 %post
@@ -84,7 +86,13 @@ yum clean all
 
 rm -rf /tmp/*
 
-rm -f /var/log/wtmp /var/log/btmp
+              rm -f /var/log/wtmp /var/log/btmp
+
+rpm -Uvh http://download1.rpmfusion.org/free/el/updates/6/i386/rpmfusion-free-release-6-1.noarch.rpm
+#install epel
+rpm -Uvh http://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 
 history -c
 %end
