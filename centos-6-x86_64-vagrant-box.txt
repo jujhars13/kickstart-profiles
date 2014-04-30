@@ -47,6 +47,11 @@ lynx
 telnet
 libmemcached
 mysql
+kernel-devel
+kernel-headers
+make
+bzip2
+perl
 %end
 
 %post
