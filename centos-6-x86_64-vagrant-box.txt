@@ -69,6 +69,7 @@ useradd vagrant
 
 mkdir -m 0700 -p /home/vagrant/.ssh
 
+#default vagrant key
 curl https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub >> /home/vagrant/.ssh/authorized_keys
 
 chmod 600 /home/vagrant/.ssh/authorized_keys
