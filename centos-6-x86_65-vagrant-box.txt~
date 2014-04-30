@@ -3,12 +3,12 @@ text
 
 cdrom
 
-lang en_US.UTF-8
-keyboard us
+lang en_UK.UTF-8
+keyboard uk
 
 network --onboot yes --bootproto dhcp --noipv6
 
-timezone --utc America/Chicago
+timezone --utc Europe/London
 
 zerombr
 clearpart --all --initlabel
@@ -42,6 +42,11 @@ git
 man
 vim
 ntp
+acl
+curl
+wget
+lynx
+telnet
 %end
 
 %post
