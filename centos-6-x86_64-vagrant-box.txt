@@ -53,6 +53,10 @@ make
 bzip2
 perl
 gcc
+nfs-common
+portmap
+rpcbind
+nfslock
 %end
 
 %post
@@ -60,6 +64,11 @@ chkconfig ntpd on
 service ntpd stop
 ntpdate time.nist.gov
 service ntpd start
+
+service rpcbind start
+service nfslock start
+chkconfig rpcbind on
+chkconfig nfslock on
 
 chkconfig sshd on
 chkconfig iptables off
