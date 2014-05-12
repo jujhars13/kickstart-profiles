@@ -53,10 +53,8 @@ make
 bzip2
 perl
 gcc
-nfs-common
 portmap
 rpcbind
-nfslock
 %end
 
 %post
