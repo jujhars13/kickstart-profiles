@@ -95,10 +95,8 @@ EOF1
 rm -f /etc/udev/rules.d/70-persistent-net.rules
 
 yum clean all
-
 rm -rf /tmp/*
-
-              rm -f /var/log/wtmp /var/log/btmp
+rm -f /var/log/wtmp /var/log/btmp
 
 rpm -Uvh http://download1.rpmfusion.org/free/el/updates/6/i386/rpmfusion-free-release-6-1.noarch.rpm
 #install epel
@@ -113,6 +111,17 @@ baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/
 gpgcheck=0
 enabled=1" >>/etc/yum.repos.d/mongodb.repo
 yum -y install mongodb-org # we use mongo for analytics
+
+##install docker
+yum -y --enablerepo=epel install docker-io
+chkconfig docker on
+service docker start
+
+##install redis
+yum -y --enablerepo=epel install redis
+
+
+
 
 history -c
 %end
