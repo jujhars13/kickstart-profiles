@@ -94,10 +94,7 @@ EOF1
 
 rm -f /etc/udev/rules.d/70-persistent-net.rules
 
-yum clean all
-rm -rf /tmp/*
-rm -f /var/log/wtmp /var/log/btmp
-
+#setup rpm fusion
 rpm -Uvh http://download1.rpmfusion.org/free/el/updates/6/i386/rpmfusion-free-release-6-1.noarch.rpm
 #install epel
 rpm -Uvh http://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
@@ -120,8 +117,10 @@ service docker start
 ##install redis
 yum -y --enablerepo=epel install redis
 
-
-
+#clean all to reduce size of machine``
+yum clean all
+rm -rf /tmp/*
+rm -f /var/log/wtmp /var/log/btmp
 
 history -c
 %end
